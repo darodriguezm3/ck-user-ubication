@@ -1,0 +1,74 @@
+# Logs
+*.log
+*.tlog
+
+# Debug y Release
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Archivos de usuario de Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Archivos de configuración de paquetes NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Archivos de dependencias
+packages/
+.nuget/
+*.dll
+*.exe
+
+# Archivos de configuración del entorno local
+.vscode/
+.vscode-test/
+.vs/
+
+# Archivos generados por Rider
+.idea/
+
+# Archivos de configuración de preferencias de VSCode
+.vscode/
+
+# Dependencias externas
+lib/
+
+# Directorio de publish (publicación de aplicación)
+publish/
+
+# Archivos de distribución
+*.zip
+*.tar.gz
+
+# Archivos de configuración del entorno
+.env
+.env.local
+.env.*.local
+.env.test
+
+# Archivos de configuración temporales o específicos de la plataforma
+*.tmp
+*.swp
+
+# Archivos relacionados con test y cobertura de código
+*.testResults
+TestResults/
+coverage/
+*.coverage
+
+# Otros archivos comunes
+Thumbs.db
+.DS_Store
