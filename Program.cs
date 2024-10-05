@@ -1,9 +1,14 @@
 using Microsoft.OpenApi.Models;
 using UserRegistrationApi.Data;
 using Microsoft.EntityFrameworkCore;
+using DotNetEnv;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Cargar el archivo .env
+Env.Load();
 
 // Configurar Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -11,7 +16,7 @@ builder.Services.AddSwaggerGen();
 
 // Agregar el DbContext y otros servicios
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(Environment.GetEnvironmentVariable("CONNECTION_STRING")));
 
 builder.Services.AddControllers();
 
