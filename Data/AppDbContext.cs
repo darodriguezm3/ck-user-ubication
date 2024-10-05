@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using UserRegistrationApi.Models;
 
 
 namespace UserRegistrationApi.Data
