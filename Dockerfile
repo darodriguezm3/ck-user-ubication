@@ -11,7 +11,7 @@ COPY . ./
 RUN dotnet publish -c Release -o /app/publish
 
 # 4. Usar una imagen base ligera de .NET ASP.NET Core Runtime para ejecutar la aplicación
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 
 # 5. Copiar los archivos compilados desde el paso anterior
