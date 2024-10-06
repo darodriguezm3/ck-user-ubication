@@ -12,11 +12,14 @@ Env.Load();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHealthChecks();
+
 // Agregar el DbContext y otros servicios
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(Environment.GetEnvironmentVariable("CONNECTION_STRING")));
 
 builder.Services.AddControllers();
+
 
 var app = builder.Build();
 
@@ -46,6 +49,9 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthorization();
 app.MapControllers();
+
+app.MapHealthChecks("/health");
+
 
 var port = Environment.GetEnvironmentVariable("PORT") ?? "3000";
 var url = $"http://0.0.0.0:{port}";

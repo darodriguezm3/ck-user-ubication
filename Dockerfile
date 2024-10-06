@@ -1,5 +1,5 @@
 # 1. Usar la imagen base de .NET SDK para construir la aplicación
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
 # 2. Copiar los archivos del proyecto y restaurar las dependencias
