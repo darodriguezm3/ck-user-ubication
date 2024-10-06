@@ -4,6 +4,10 @@ namespace UserRegistrationApi.Models
 {
     public class User
     {
+
+        [Key]  // Indica que esta propiedad es la clave primaria
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "El nombre es obligatorio.")]
         [StringLength(100, ErrorMessage = "El nombre no puede tener más de 100 caracteres.")]
         public string Name { get; set; }
