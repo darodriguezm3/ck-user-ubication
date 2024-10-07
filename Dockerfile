@@ -22,4 +22,4 @@ ENV ASPNETCORE_URLS=http://+:8080
 EXPOSE 8080
 
 # 7. Comando de inicio para correr la aplicación
-ENTRYPOINT ["dotnet", "UserRegistrationApi.dll"]
+ENTRYPOINT ["dotnet", "myapp.dll"]
