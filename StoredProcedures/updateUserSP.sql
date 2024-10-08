@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION update_user(
+CREATE OR REPLACE PROCEDURE update_user(
     p_user_id INT,
     p_name VARCHAR,
     p_phone VARCHAR,

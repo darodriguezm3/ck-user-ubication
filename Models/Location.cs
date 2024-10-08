@@ -1,9 +1,16 @@
 using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 public class Town
 {
+    [Column("town_id")]  // Esto mapea la propiedad TownId a la columna town_id en la base de datos
     public int TownId { get; set; }
+    
+    [Column("name")]  // Mapea DepartmentId a la columna department_id
     public string Name { get; set; }
+
+    [Column("department_id")]  // Mapea DepartmentId a la columna department_id
     public int DepartmentId { get; set; }
 
     public Department Department { get; set; }

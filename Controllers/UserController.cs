@@ -30,12 +30,23 @@ namespace UserRegistrationApi.Controllers
                 return BadRequest(ModelState);
             }
 
-        // Validar si el municipio existe
-        var townExists = await _context.Set<Town>().AnyAsync(m => m.TownId == user.TownId);
-        if (!townExists)
+
+        // Imprimir el valor de TownId para depuración
+        // Verificar si el municipio existe
+        var town = await _context.Set<Town>().FirstOrDefaultAsync(m => m.TownId == user.TownId);
+
+        if (town == null)
         {
             return BadRequest("Municipio no encontrado.");
         }
+
+
+        // // Validar si el municipio existe
+        // var townExists = await _context.Set<Town>().AnyAsync(m => m.TownId == user.TownId);
+        // if (!townExists)
+        // {
+        //     return BadRequest("Municipio no encontrado.");
+        // }
 
         // Aquí es donde llamamos al stored procedure
         var command = _context.Database.GetDbConnection().CreateCommand();

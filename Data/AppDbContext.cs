@@ -22,7 +22,17 @@ namespace UserRegistrationApi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Town>()
+                .Property(t => t.TownId)
+                .HasColumnName("town_id");
+
+                
             base.OnModelCreating(modelBuilder);
+            // Configurar tablas existentes en la base de datos
+            modelBuilder.Entity<Town>().ToTable("town"); // Asignar la tabla manualmente
+            modelBuilder.Entity<User>().ToTable("User"); // Asegúrate de hacer lo mismo para otras entidades
+            modelBuilder.Entity<Department>().ToTable("Department");
+            modelBuilder.Entity<Country>().ToTable("Country");
 
         }
     }

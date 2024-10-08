@@ -3,7 +3,7 @@ RETURNS TABLE (
     id INT,
     name VARCHAR,
     phone VARCHAR,
-    address TEXT,
+    address VARCHAR,
     town_id INT
 ) AS $$
 BEGIN
