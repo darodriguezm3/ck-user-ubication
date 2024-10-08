@@ -4,11 +4,11 @@ RETURNS TABLE (
     name VARCHAR,
     phone VARCHAR,
     address TEXT,
-    municipality_id INT
+    town_id INT
 ) AS $$
 BEGIN
     RETURN QUERY
-    SELECT u.id, u.name, u.phone, u.address, u.municipality_id
+    SELECT u.id, u.name, u.phone, u.address, u.town_id
     FROM public."user" u
     WHERE u.id = p_user_id;
 END;
